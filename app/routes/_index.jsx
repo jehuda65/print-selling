@@ -1,5 +1,7 @@
 import products from "../products.json";
 
+
+
 export const meta = () => {
   return [
     { title: "New Remix App" },
@@ -10,22 +12,23 @@ export const meta = () => {
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to my store!</h1>
+      <h1 className="text-center font-bold">Welcome to my store!</h1>
 
       <div>
         {products.map((product) => {
           return (
-            <div key={product.id}>
+            <div className="flex flex-col justify-center text-center space-y-5" key={product.id}>
               <h3>{product.title}</h3>
               <img
-                className="h-44"
+                className="w-44 m-auto"
                 src={product.image}
                 alt={`Preview of ${product.title}`}
               />
               <p>{product.description}</p>
               <p>${product.price}</p>
               <p>
-                <button>Add to Cart</button>
+             
+                <button className="button-main">Add to Cart</button>
               </p>
             </div>
           );
