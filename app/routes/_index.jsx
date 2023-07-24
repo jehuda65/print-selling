@@ -4,7 +4,7 @@ import products from "../products.json";
 
 export const meta = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Yehudah Prints" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
