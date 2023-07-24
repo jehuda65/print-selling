@@ -28,7 +28,7 @@ export default function Index() {
               <p>${product.price}</p>
               <p>
                 <a href="https://buy.stripe.com/eVa6psbYG7Lj0EMfYY">
-                <button className="button-main">Add to Cart</button></a>
+                <button className="button-main">Buy Now</button></a>
               </p>
             </div>
           );
