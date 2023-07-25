@@ -1,11 +1,12 @@
 import Custom from "./custom";
-import Navbar from "./navbar";
-import Portrait from "./portrait";
-import Services from "./services";
+import Navbar from "../components/navbar";
+import Portrait from "../components/portrait";
+import Services from "../components/services";
+import Thumbnails from "../components/thumbnails";
 
 export const meta = () => {
   return [
-    { title: "Yehudah Prints" },
+    { title: "Yehudah's Prints" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
@@ -22,6 +23,7 @@ export default function Index() {
         <Portrait />
         <Custom />
         <Services />
+        <Thumbnails />
       </div>
     </div>
   );
