@@ -1,7 +1,8 @@
 import Custom from "./custom";
-import Navbar from "./navbar";
+import Navbar from "./components/navbar";
 import Portrait from "./portrait";
 import Services from "./services";
+
 
 export const meta = () => {
   return [
