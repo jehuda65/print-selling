@@ -5,6 +5,7 @@ const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Store", href: "/", current: false },
   { name: "About me", href: "/", current: false },
+  { name: "Gallery", href: "/", current: false },
 ];
 
 function classNames(...classes) {
@@ -30,12 +31,12 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch">
-                <div className="flex flex-shrink-0 items-center">
-                  <img
+                <div className="flex flex-shrink-0 items-center text-white font-semibold">
+                  <p>DrawnByYehudah.com</p>
+                  {/* <a
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                    href="/"
+                  ></a> */}
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
