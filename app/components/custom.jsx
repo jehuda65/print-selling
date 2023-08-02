@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Resend } from "resend";
 
 export default function Custom() {
   const [name, setName] = useState("");
@@ -45,7 +46,7 @@ export default function Custom() {
             onChange={(e) => setFile(e.target.files[0])}
           />
           <br />
-          <button className="button-main mb-2" type="submit">
+          <button className="button-main mb-2" type="submit" onClick={Resend}>
             Submit
           </button>
         </form>
