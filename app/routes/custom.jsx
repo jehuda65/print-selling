@@ -1,11 +1,10 @@
 import { useState } from "react";
-import loader from "send";
 
 export const loader = async () => {
   return json({ ok:true });
 };
 
-export default function Custom() {
+export default function CustomA() {
 
   const [name, setName] = useState("");
   const [file, setFile] = useState(null);

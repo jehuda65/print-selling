@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-import Custom from "./custom";
-import Navbar from "./components/navbar";
-import Portrait from "./portrait";
-import Services from "./services";
-=======
+
+
+
+
 import Custom from "../components/custom";
 import Navbar from "../components/navbar";
 import Portrait from "../components/portrait";
@@ -11,7 +9,7 @@ import Services from "../components/services";
 import Thumbnails from "../components/thumbnails";
 import Quickview from "../components/quickview";
 // import { Link } from "react-router";
->>>>>>> 64e22a345f7a7813334f7bd7cf1d85afe8a448a1
+
 
 
 export const meta = () => {
