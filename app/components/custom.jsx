@@ -14,7 +14,7 @@ export default function Custom() {
       <div>
         <form className="px-3">
           <div className="flex flex-col md:flex-row text-left">
-            <p>Name:</p>
+            <p className="text-sm font-semibold py-3">Name:</p>
             <input
               className="my-input"
               type="text"
@@ -25,17 +25,21 @@ export default function Custom() {
           </div>
 
           <div className="flex flex-col md:flex-row text-left">
-            <p>Phone number:</p>
-            <select className="my-input w-20">
-              <option value="number">+44</option>
-              <option value="number">+1</option>
-              <option value="number">+972</option>
+            <label
+            htmlFor="phone-number" className="text-sm font-semibold py-3">Phone number</label>
+            <select 
+            id="country"
+            name="country" className="my-input border-0 bg-transparent w-20">
+              <option>+44</option>
+              <option>+1</option>
+              <option>+972</option>
             </select>
-            <input className="my-input" type="number" required />
+            <input className="my-input" type="tel"  name="phone-number"
+                id="phone-number" autoComplete="tel" required />
           </div>
 
           <div className="flex flex-col md:flex-row text-left">
-            <p>Email:</p>
+            <p className="text-sm font-semibold py-3">Email:</p>
             <input className="my-input" type="email" required />
           </div>
 
