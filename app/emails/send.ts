@@ -1,7 +1,7 @@
 import { json } from '@remix-run/node';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_SECRET_NEW);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const loader = async () => {
   try {

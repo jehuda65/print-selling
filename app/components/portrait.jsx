@@ -6,7 +6,7 @@ export default function Portrait() {
       {products.map((product) => {
         return (
           <div
-            className="flex flex-col justify-center space-y-5 shadow-lg md:w-1/2 md:rounded-xl"
+            className="flex flex-col justify-center space-y-5 shadow-lg md:w-3/5 md:rounded-xl mx-10 rounded md:py-5 bg-white px-5 md:mx-auto "
             key={product.id}
           >
             <div className="flex flex-col text-center md:flex-row md:items-center md:space-x-6">

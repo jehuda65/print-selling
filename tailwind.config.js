@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       backgroundImage:{
         'finkel': "url('/img/rfinkel.jpg')",
+        'osher': "url('/img/osher-edited.jpg')",
+        'ouzzan': "url('/img/ouzzan-edited.jpg')",
+        'buch': "url('/img/buch.jpg')",
       }
     },
   },
