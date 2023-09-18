@@ -6,6 +6,7 @@ export default function Portrait() {
       {products.map((product) => {
         return (
           <div
+<<<<<<< HEAD
             className="flex flex-col justify-center space-y-5 shadow-lg md:shadow-gray-400 px-4 md:w-1/2 md:rounded-md md:mx-auto"
             key={product.id}
           >
@@ -15,6 +16,15 @@ export default function Portrait() {
                 <h3 className="font-bold text-emerald-700 md:text-2xl">
                   {product.title}
                 </h3>
+=======
+            className="flex flex-col justify-center space-y-5 shadow-lg md:w-3/5 md:rounded-xl mx-10 rounded md:py-5 bg-white px-5 md:mx-auto "
+            key={product.id}
+          >
+            <div className="flex flex-col text-center md:flex-row md:items-center md:space-x-6">
+              <div className="bg-finkel bg-contain bg-center bg-no-repeat h-52 md:w-96"></div>
+              <div className="flex flex-col my-auto md:text-left py-4 ml-0">
+                <h3 className="font-bold text-emerald-700">{product.title}</h3>
+>>>>>>> e9e2a73ae5e7ae09aa25e78f35030cdebb0d1463
                 <p className="text-sm md:text-base">{product.description}</p>
                 <p className="py-2 font-semibold">{product.price}</p>
                 <a href="https://buy.stripe.com/eVa6psbYG7Lj0EMfYY">
