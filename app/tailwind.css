@@ -8,6 +8,6 @@
       }
 
     .my-input {
-      @apply border border-slate-500 rounded
+      @apply border border-slate-500 rounded bg-slate-200 w-full;
     }
     }

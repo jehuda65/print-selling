@@ -26,15 +26,21 @@ export default function Index() {
           <Portrait />
           <Quickview />
         </div>
-        <Custom />
+
+        <div className="flex"></div>
+        <div>
+          <Custom />
+        </div>
         <div>
           {/* <Link to="/custom2" className="button1">
             send image
           </Link> */}
         </div>
-        <Services />
-        <Thumbnails />
+        <div>
+          <Services />
+        </div>
       </div>
+      <Thumbnails />
     </div>
   );
 }
