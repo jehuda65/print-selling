@@ -1,7 +1,3 @@
-
-
-
-
 import Custom from "../components/custom";
 import Navbar from "../components/navbar";
 import Portrait from "../components/portrait";
@@ -9,8 +5,6 @@ import Services from "../components/services";
 import Thumbnails from "../components/thumbnails";
 import Quickview from "../components/quickview";
 // import { Link } from "react-router";
-
-
 
 export const meta = () => {
   return [
@@ -36,18 +30,18 @@ export default function Index() {
           }}
         />
       </div>
-      
+
       <div className="py-2">
         <h1 className="text-center font-semibold text-2xl py-3 px-4">
           Welcome to my studio!
         </h1>
-        <div className="flex mx-auto">
-          <Portrait className="z-10"/>
+        <div className="flex">
           <Quickview />
         </div>
 
         <div className="flex"></div>
         <div>
+          <Portrait className="z-10" />
           <Custom />
         </div>
         <div>

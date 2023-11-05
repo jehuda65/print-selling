@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { /*useRef, */useState } from "react";
 import { Resend } from "resend";
-import { useLoaderData, useActionData } from "@remix-run/react";
+// import { useLoaderData, useActionData } from "@remix-run/react";
 import { json } from "@remix-run/node";
 
 
@@ -18,7 +18,7 @@ export const loader = async () => {
     return json(data, 200);
   } catch (error) {
     return json({ error }, 400);
-  };
+  }
 };
 
 // export const action = async ({ request }: ActionArgs) => {
@@ -31,27 +31,27 @@ export const loader = async () => {
 
 export default function Custom() {
   const [name, setName] = useState("");
-  const [file, setFile] = useState(null);
-  const form = useRef();
-  const sendEmail = () => {};
-  const data = useLoaderData<typeof loader>();
+  // const [file, setFile] = useState(null);
+  // const form = useRef();
+  // const sendEmail = () => {};
+  // const data = useLoaderData<typeof loader>();
   // const data = useActionData()
 
   return (
-    <div className="text-center m-1 shadow rounded-md py-8">
+    <div className="text-center m-1 md:mx-[20vw] shadow rounded-md py-8">
       <p className="text-emerald-500 font-semibold">
         Do you have a picture that you want drawn?
       </p>
 
       <div>
-        <form onSubmit={loader} className="px-3 md:w-1/2 mx-auto">
+        <form onSubmit={loader} className="px-3 md:w-2/3 mx-auto">
           <div className="flex flex-col text-left">
             <p className="text-sm font-semibold py-3">Name:</p>
             <input
               className="my-input"
               type="text"
               required
-              // value={name}
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -78,7 +78,7 @@ export default function Custom() {
           </div>
 
           <input
-            className="my-input my-4 file:bg-emerald-500"
+            className="my-input my-4 file:bg-emerald-500 file:button-main file:border-none file:cursor-pointer"
             type="file"
             // value={file}
             // onChange={(e) => setFile(e.target.files[0])}
