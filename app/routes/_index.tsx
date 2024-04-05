@@ -15,11 +15,13 @@ export const meta = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <div
+      className="bg-gray-900 text-gray-200"
+      style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}
+    >
       <Navbar />
-
       <div
-        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+        className="fixed inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
       >
         <div
@@ -31,8 +33,8 @@ export default function Index() {
         />
       </div>
 
-      <div className="py-2">
-        <h1 className="text-center font-semibold text-2xl py-3 px-4">
+      <div className="pb-2">
+        <h1 className="text-center text-emerald-500 font-semibold text-2xl py-8 px-4">
           Welcome to my studio!
         </h1>
         <div className="flex">
@@ -40,8 +42,8 @@ export default function Index() {
         </div>
 
         <div className="flex"></div>
-        <div>
-          <Portrait className="z-10" />
+        <div className="flex flex-col space-y-10">
+          <Portrait />
           <Custom />
         </div>
         <div>

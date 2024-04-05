@@ -1,18 +1,18 @@
-import { /*useRef, */useState } from "react";
+import { /*useRef, */ useState } from "react";
 import { Resend } from "resend";
 // import { useLoaderData, useActionData } from "@remix-run/react";
 import { json } from "@remix-run/node";
+import { Form } from "@remix-run/react";
 
-
-const resend = new Resend("re_WHDETvpb_44UXqV8TxJmzeQmP3uGQK7jb");
+const resend = new Resend("re_WBYrCQJo_2C2ATP3yEJCTuQahs6Wfr6h8");
 
 export const loader = async () => {
   try {
     const data = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: ['yehudahdavidson@gmail.com'],
-      subject: 'Hello world',
-      html: '<strong>It works!</strong>',
+      from: "Acme <onboarding@resend.dev>",
+      to: ["yehudahdavidson@gmail.com"],
+      subject: "Hello world",
+      html: "<strong>It works!</strong>",
     });
 
     return json(data, 200);
@@ -27,7 +27,6 @@ export const loader = async () => {
 //   const content = form.get("content");
 //   const name = form.get("name");
 // };
-
 
 export default function Custom() {
   const [name, setName] = useState("");
@@ -44,7 +43,12 @@ export default function Custom() {
       </p>
 
       <div>
-        <form onSubmit={loader} className="px-3 md:w-2/3 mx-auto">
+        <Form
+          action="/send-message"
+          method="post"
+          onSubmit={loader}
+          className="px-3 md:w-2/3 mx-auto"
+        >
           <div className="flex flex-col text-left">
             <p className="text-sm font-semibold py-3">Name:</p>
             <input
@@ -58,18 +62,30 @@ export default function Custom() {
 
           <div className="flex flex-col text-left">
             <label
-            htmlFor="phone-number" className="text-sm font-semibold py-3">Phone number</label>
+              htmlFor="phone-number"
+              className="text-sm font-semibold py-3"
+            >
+              Phone number
+            </label>
             <div className="flex flex-row">
-            <select 
-            id="country"
-            name="country" className="my-input border-0 bg-transparent w-20">
-              <option>+44</option>
-              <option>+1</option>
-              <option>+972</option>
-            </select>
-            <input className="my-input" type="tel"  name="phone-number"
-                id="phone-number" autoComplete="tel" required />
-          </div>
+              <select
+                id="country"
+                name="country"
+                className="my-input border-0 bg-transparent w-20"
+              >
+                <option>+44</option>
+                <option>+1</option>
+                <option>+972</option>
+              </select>
+              <input
+                className="my-input"
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                autoComplete="tel"
+                required
+              />
+            </div>
           </div>
 
           <div className="flex flex-col text-left">
@@ -87,7 +103,7 @@ export default function Custom() {
           <button className="button-main mb-2" type="submit" onClick={loader}>
             Submit
           </button>
-        </form>
+        </Form>
         <p>I will email you back with a quote</p>
       </div>
     </div>
