@@ -37,9 +37,7 @@ export default function Index() {
         <h1 className="text-center text-emerald-500 font-semibold text-2xl py-8 px-4">
           Welcome to my studio!
         </h1>
-        <div className="flex">
-          <Quickview />
-        </div>
+        <div className="flex">{/* <Quickview /> */}</div>
 
         <div className="flex"></div>
         <div className="flex flex-col space-y-10">

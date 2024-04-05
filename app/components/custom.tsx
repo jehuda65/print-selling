@@ -1,25 +1,6 @@
-import { /*useRef, */ useState } from "react";
-import { Resend } from "resend";
 // import { useLoaderData, useActionData } from "@remix-run/react";
-import { json } from "@remix-run/node";
+
 import { Form } from "@remix-run/react";
-
-const resend = new Resend("re_WBYrCQJo_2C2ATP3yEJCTuQahs6Wfr6h8");
-
-export const loader = async () => {
-  try {
-    const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["yehudahdavidson@gmail.com"],
-      subject: "Hello world",
-      html: "<strong>It works!</strong>",
-    });
-
-    return json(data, 200);
-  } catch (error) {
-    return json({ error }, 400);
-  }
-};
 
 // export const action = async ({ request }: ActionArgs) => {
 //   const userId = await requireUserId(request);
@@ -29,7 +10,6 @@ export const loader = async () => {
 // };
 
 export default function Custom() {
-  const [name, setName] = useState("");
   // const [file, setFile] = useState(null);
   // const form = useRef();
   // const sendEmail = () => {};
@@ -44,19 +24,17 @@ export default function Custom() {
 
       <div>
         <Form
-          action="/send-message"
-          method="post"
-          onSubmit={loader}
+          action="/api/send"
+          method="POST"
           className="px-3 md:w-2/3 mx-auto"
         >
           <div className="flex flex-col text-left">
             <p className="text-sm font-semibold py-3">Name:</p>
             <input
+              name="first-name"
               className="my-input"
               type="text"
               required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -80,7 +58,7 @@ export default function Custom() {
               <input
                 className="my-input"
                 type="tel"
-                name="phone-number"
+                name="number"
                 id="phone-number"
                 autoComplete="tel"
                 required
@@ -90,7 +68,7 @@ export default function Custom() {
 
           <div className="flex flex-col text-left">
             <p className="text-sm font-semibold py-3">Email:</p>
-            <input className="my-input" type="email" required />
+            <input name="email" className="my-input" type="email" required />
           </div>
 
           <input
@@ -100,7 +78,7 @@ export default function Custom() {
             // onChange={(e) => setFile(e.target.files[0])}
           />
           <br />
-          <button className="button-main mb-2" type="submit" onClick={loader}>
+          <button className="button-main mb-2" type="submit">
             Submit
           </button>
         </Form>
