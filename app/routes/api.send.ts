@@ -18,9 +18,9 @@ export const action = async ({ request }: DataFunctionArgs) => {
     await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: "yehudahdavidson@gmail.com",
-      subject: "Hello world",
+      subject: "Print selling website contact",
       html: `${firstName} ${lastName} is interested in getting in touch!
-      <br/> Call them on ${phone} or send them an email at ${email}
+      <br/> Call them on <strong>${phone}</strong> or send them an email at ${email}
       <br/><br/> <em>'${message}'</em>`,
     });
 
